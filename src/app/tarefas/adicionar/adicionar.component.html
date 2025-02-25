@@ -1,0 +1,51 @@
+<div class="content">
+  <!-- Move Lista de Tarefas to first position -->
+  <div class="tarefas">
+    <h2>{{ listarTarefas }}</h2>
+    <h3>Quantidade tarefas: {{tarefas.length}}</h3>
+    <ul>
+      <li *ngFor="let tarefa of tarefasVisiveis; let i = index">
+        <input type="checkbox" (change)="concluirTarefa(i)" />
+        {{ tarefa }}
+      </li>
+    </ul>
+    <button 
+      *ngIf="tarefas.length > 2" 
+      (click)="toggleMostrarTodasTarefas()" 
+      class="btn-vermais">
+      {{ mostrarTodasTarefas ? 'Ver menos' : 'Ver mais' }}
+    </button>
+  </div>
+
+  <!-- Move Criar to middle position -->
+  <div class="criar">
+    <h2>{{ tituloCriar }}</h2>
+    <h3>Total de tarefas: {{totalTarefas}}</h3>
+    <input 
+      class="input-text" 
+      placeholder="Digite aqui..."
+      [(ngModel)]="novaTarefa"
+    />
+    <button class="btn-criar" (click)="criarTarefa()">Adicionar</button>
+  </div>
+
+  <!-- Keep Concluidas as last -->
+  <div class="tarefas">
+    <h2>{{ tarefasConcluidas }}</h2>
+    <h3>Quantidade tarefas concluídas: {{tarefasConcluidasCount}}</h3>
+    <ul>
+      <li 
+      [ngStyle]="{ 'text-decoration': 'line-through', 'color': 'gray','border': '2px solid #00FF00' }"
+      *ngFor="let tarefa of tarefasConcluidasVisiveis; let i = index">
+        <input type="checkbox" (change)="desfazerConclusao(i)"/>
+        {{ tarefa }}
+      </li>
+    </ul>
+    <button 
+      *ngIf="tarefasConcluidasLista.length > 2" 
+      (click)="toggleMostrarTodasConcluidas()" 
+      class="btn-vermais">
+      {{ mostrarTodasConcluidas ? 'Ver menos' : 'Ver mais' }}
+    </button>
+  </div>
+</div>

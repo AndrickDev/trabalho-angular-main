@@ -1,0 +1,102 @@
+body {
+  background-color: white !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: flex-start;
+  height: 100vh;
+  background-color: rgb(156, 83, 83);
+}
+
+/* Since background is white now, adjust text colors */
+.tarefas {
+  background-color: rgba(119, 27, 27, 0.504);
+  color: #ffffff;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background-color: #28bc86;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    flex-shrink: 0;
+  }
+  
+  /* Card order */
+  .card-criar {
+    order: 2; /* Middle position */
+  }
+  
+  .card-lista {
+    order: 1; /* Left position */
+  }
+  
+  .card-concluidas {
+    order: 3; /* Right position */
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(77, 142, 52, 0.504);
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  width: 400px;
+  text-align: center;
+  margin: 20px;
+  color: #ffffff;
+}
+
+.btn-vermais {
+  background-color: rgba(130, 65, 65, 0.01);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  height: 30px;
+  width: 20%;
+}
+
+.btn-vermais:active {
+  background-color: #ffffff;
+  color: #91465e;
+}
+
+.content .input-text {
+  border: 2px solid #1e5398;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-right: 15px;
+}
+
+.tarefas ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 60%;
+  gap: 10px;
+}
+
+.tarefas li {
+  list-style: none;
+  border: 2px solid #442020;
+  text-align: start;
+  width: 100%;
+  padding: 12px 20px;
+}
